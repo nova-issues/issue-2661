@@ -23,6 +23,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->app->singleton(
+            \Laravel\Vapor\Contracts\SignedStorageUrlController::class,
+            \App\Http\Controllers\SignedStorageUrlController::class
+        );
     }
 }
